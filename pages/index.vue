@@ -24,7 +24,8 @@
     </div>
     <div class="instructions">
       <h3 class="title">Object view</h3>
-      <div class="object-viewer"></div>
+      <!-- TODO: Use https://github.com/mohsen1/json-formatter-js to show the structure -->
+      <div class="object-viewer">{{ structure }}</div>
       <div class="goal">
         <ul class="goal-list">
           <li>Value: 'Test'</li>
@@ -36,13 +37,25 @@
   </div>
 </template>
 
+<script>
+import generateRandomStructure from '~/helpers/generateRandomStructure'
+
+export default {
+  data() {
+    return {
+      structure: generateRandomStructure()
+    }
+  }
+}
+</script>
+
 <style lang="sass" scoped>
 .content
   display: flex
   position: relative
   height: calc(100vh - 80px)
   .workspace
-    width: 50%
+    min-width: 50%
     height: 100%
     border-right: 1px solid black
     font-size: 60px
@@ -95,5 +108,7 @@
   .object-viewer
     height: 300px
     width: 100%
+    height: 40vh
+    overflow: scroll
     border: 1px solid black
 </style>
