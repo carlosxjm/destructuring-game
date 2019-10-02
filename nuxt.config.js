@@ -57,5 +57,8 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  router: process.env.DEPLOY_ENV === 'GH_PAGES' && {
+    base: '/destructuring-game/'
   }
 }
