@@ -59,6 +59,6 @@ module.exports = {
     extend(config, ctx) {}
   },
   router: process.env.DEPLOY_ENV === 'GH_PAGES' && {
-    base: '/destructuring-game/'
+    base: '/destructuring-game/dist/'
   }
 }
