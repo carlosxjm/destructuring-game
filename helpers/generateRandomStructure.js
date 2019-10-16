@@ -1,3 +1,5 @@
+import NAME_LIST from '../assets/nameKeys.json'
+
 const MAX_DEPTH = 10
 const MIN_DEPTH = 5
 
@@ -20,7 +22,10 @@ const generateRandomArray = (depth) =>
     generateRandomStructure(depth > MAX_DEPTH && 'primitive', depth + 1)
   )
 
-const generateRandomString = () => 'foo' // TODO: Generate random strings
+const generateRandomString = () => {
+  const randomIndex = generateRandomNumber(0, NAME_LIST.length - 1)
+  return NAME_LIST[randomIndex]
+}
 
 const generateRandomNumber = (min = 0, max = 100) =>
   Math.floor(Math.random() * (max + 1 - min) + min)
