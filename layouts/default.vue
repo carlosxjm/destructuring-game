@@ -35,4 +35,7 @@ html
 .title
   margin: 0
   font-size: 20px
+
+.content
+  padding: 0 20px
 </style>
