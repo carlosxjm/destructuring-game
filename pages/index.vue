@@ -24,8 +24,7 @@
     </div>
     <div class="instructions">
       <h3 class="title">Object view</h3>
-      <!-- TODO: Use https://github.com/mohsen1/json-formatter-js to show the structure -->
-      <div class="object-viewer">{{ structure }}</div>
+      <div v-json-viewer="structure" class="object-viewer" />
       <div class="goal">
         <ul class="goal-list">
           <li>Value: 'Test'</li>
